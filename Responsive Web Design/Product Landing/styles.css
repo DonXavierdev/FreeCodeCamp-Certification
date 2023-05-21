@@ -1,0 +1,105 @@
+@media (max-width: 600px) {
+    header {
+      flex-wrap: wrap;
+    }
+  }
+#header-img{
+    display: inline;
+    width: 100px;
+    height: 75px;
+    position:absolute;
+    left:50%;
+}
+.logo{
+    display: inline;
+}
+h1{
+    display: inline;
+}
+a{
+    text-decoration: none;
+    color: #000;
+    font-size: 25px;
+    padding-left: 25px;
+}
+#nav-bar{
+    display: inline;
+    position: fixed;
+    left: 60%
+}
+form{
+    margin-top: 75px;
+    position:relative;
+    left:50%;
+}
+.form-things{
+    display: block;
+    margin-bottom: 20px;
+}
+#submit{
+    background-color: yellow;
+    width: 150px;
+    height: 30px;
+    font-size: large;
+    font-weight: bold;
+}
+p{
+    display: inline;
+    padding-left: 105px;
+}
+section{
+    margin-bottom: 50px;
+}
+i{
+    font-size: 50px;
+    padding-right: 50px;
+}
+.heads{
+    font-size: 25px;
+}
+.main{
+    margin-left: 25%;
+}
+.icons{
+    display: inline;
+}
+.diff-price{
+    display: flex;
+    justify-content: space-evenly;
+}
+.price1,.price2,.price3{
+    border: 1px solid black;
+    text-align: center;
+    height: 140px;
+    font-weight: bold;
+    font-size: large;
+}
+.buttons{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-color: yellow;
+    font-size: 25px;
+    width: 155px;
+}
+.ftr{
+display: inline;
+position: relative;
+left: 75%;
+line-height: 30px;
+}
+.ftr1{
+    display: inline;
+    position: relative;
+    left: 75%;
+    line-height: 30px;
+    word-spacing: 30px;
+    font-weight: bold;
+}
+.container{
+    margin-left: 35%;
+}
+footer{
+    background-color: #ddd;
+}
