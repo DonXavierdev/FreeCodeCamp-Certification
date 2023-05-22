@@ -625,4 +625,423 @@ function golfScore(par, strokes) {
 // Change these values to test
 golfScore( 5, 4);
 ``` 
- 
+#### Selecting from Many Options with Switch Statements
+```
+switch (fruit) {
+  case "apple":
+    console.log("The fruit is an apple");
+    break;
+  case "orange":
+    console.log("The fruit is an orange");
+    break;
+}
+```
+#### Adding a Default Option in Switch Statements
+```
+switch (num) {
+  case value1:
+    statement1;
+    break;
+  case value2:
+    statement2;
+    break;
+...
+  default:
+    defaultStatement;
+    break;
+}
+```
+#### Multiple Identical Options in Switch Statements
+```
+let result = "";
+switch (val) {
+  case 1:
+  case 2:
+  case 3:
+    result = "1, 2, or 3";
+    break;
+  case 4:
+    result = "4 alone";
+}
+```
+#### Replacing If Else Chains with Switch
+```
+//   if (val === "bob") {
+//     answer = "Marley";
+//   } else if (val === 42) {
+//     answer = "The Answer";
+//   } else if (val === 1) {
+//     answer = "There is no #1";
+//   } else if (val === 99) {
+//     answer = "Missed me by this much!";
+//   } else if (val === 7) {
+//     answer = "Ate Nine";
+//   }
+```
+#### Returning Boolean Values from Functions
+```
+function isEqual(a, b) {
+  return a === b;
+}
+```
+#### Return Early Pattern for Functions
+```
+function myFun() {
+  console.log("Hello");
+  return "World";
+  console.log("byebye")
+}
+myFun();
+
+```
+#### Counting Cards
+```
+let count = 0;
+
+function cc(card) {
+  // Only change code below this line
+  switch (card) {
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      count++;
+      break;
+    case 10:
+    case "J":
+    case "Q":
+    case "K":
+    case "A":
+      count--;
+      break;
+  }
+  if (count > 0) {
+    return count + " Bet";
+  } else {
+    return count + " Hold";
+  }
+  // Only change code above this line
+}
+
+cc(2); cc(3); cc(7); cc('K'); cc('A');
+```
+#### Build JavaScript Objects
+```
+const cat = {
+  "name": "Whiskers",
+  "legs": 4,
+  "tails": 1,
+  "enemies": ["Water", "Dogs"]
+};
+```
+#### Accessing Object Properties with Dot Notation
+```
+const myObj = {
+  prop1: "val1",
+  prop2: "val2"
+};
+
+const prop1val = myObj.prop1;
+const prop2val = myObj.prop2;
+```
+#### Accessing Object Properties with Bracket Notation
+```
+const myObj = {
+  "Space Name": "Kirk",
+  "More Space": "Spock",
+  "NoSpace": "USS Enterprise"
+};
+
+myObj["Space Name"];
+myObj['More Space'];
+myObj["NoSpace"];
+```
+#### Accessing Object Properties with Variables
+```
+const dogs = {
+  Fido: "Mutt",
+  Hunter: "Doberman",
+  Snoopie: "Beagle"
+};
+
+const myDog = "Hunter";
+const myBreed = dogs[myDog];
+console.log(myBreed);
+```
+#### Updating Object Properties
+```
+// Setup
+var myDog = {
+  name: "Coder",
+  legs: 4,
+  tails: 1,
+  friends: ["freeCodeCamp Campers"]
+};
+
+// Only change code below this line.
+
+myDog.name = "Happy Coder"; // Solution
+```
+#### Add New Properties to a JavaScript Object
+```
+const ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+
+ourDog.bark = "bow-wow";
+```
+#### Delete Properties from a JavaScript Object
+```
+const ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"],
+  "bark": "bow-wow"
+};
+
+delete ourDog.bark;
+```
+#### Using Objects for Lookups
+```
+const article = {
+  "title": "How to create objects in JavaScript",
+  "link": "https://www.freecodecamp.org/news/a-complete-guide-to-creating-objects-in-javascript-b0e2450655e8/",
+  "author": "Kaashan Hussain",
+  "language": "JavaScript",
+  "tags": "TECHNOLOGY",
+  "createdAt": "NOVEMBER 28, 2018"
+};
+
+const articleAuthor = article["author"];
+const articleLink = article["link"];
+
+const value = "title";
+const valueLookup = article[value];
+```
+#### Testing Objects for Properties
+```
+function checkForProperty(object, property) {
+  return object.hasOwnProperty(property);
+}
+
+checkForProperty({ top: 'hat', bottom: 'pants' }, 'top'); // true
+checkForProperty({ top: 'hat', bottom: 'pants' }, 'middle'); // false
+```
+#### Manipulating Complex Objects
+```
+const ourMusic = [
+  {
+    "artist": "Daft Punk",
+    "title": "Homework",
+    "release_year": 1997,
+    "formats": [ 
+      "CD", 
+      "Cassette", 
+      "LP"
+    ],
+    "gold": true
+  }
+];
+```
+#### Accessing Nested Arrays
+```
+const ourPets = [
+  {
+    animalType: "cat",
+    names: [
+      "Meowzer",
+      "Fluffy",
+      "Kit-Cat"
+    ]
+  },
+  {
+    animalType: "dog",
+    names: [
+      "Spot",
+      "Bowser",
+      "Frankie"
+    ]
+  }
+];
+
+ourPets[0].names[1];
+ourPets[1].names[0];
+```
+#### Record Collection
+```
+function updateRecords(records, id, prop, value) {
+  if (value === "") {
+    delete records[id][prop];
+  } else if (prop !== "tracks" && value !== "") {
+    records[id][prop] = value;
+  } else if (prop === "tracks" && value !== "") {
+    if (records[id].hasOwnProperty("tracks") === false) {
+      records[id][prop] = [];
+    }
+    records[id][prop].push(value);
+  }
+  return records;
+}
+```
+#### Iterate with JavaScript While Loops
+```
+const ourArray = [];
+let i = 0;
+
+while (i < 5) {
+  ourArray.push(i);
+  i++;
+}
+```
+#### Iterate with JavaScript For Loops
+```
+const ourArray = [];
+
+for (let i = 0; i < 5; i++) {
+  ourArray.push(i);
+}
+```
+#### Iterate Odd Numbers With a For Loop
+```
+const ourArray = [];
+
+for (let i = 1; i < 9; i += 2) {
+  ourArray.push(i);
+}
+```
+#### Count Backwards With a For Loop
+```
+const ourArray = [];
+
+for (let i = 10; i > 0; i -= 2) {
+  ourArray.push(i);
+}
+```
+#### Iterate Through an Array with a For Loop
+```
+const arr = [10, 9, 8, 7, 6];
+
+for (let i = 0; i < arr.length; i++) {
+   console.log(arr[i]);
+}
+```
+#### Nesting For Loops
+```
+const arr = [
+  [1, 2], [3, 4], [5, 6]
+];
+
+for (let i = 0; i < arr.length; i++) {
+  for (let j = 0; j < arr[i].length; j++) {
+    console.log(arr[i][j]);
+  }
+}
+```
+#### Iterate with JavaScript Do...While Loops
+```
+const ourArray = [];
+let i = 0;
+
+do {
+  ourArray.push(i);
+  i++;
+} while (i < 5);
+```
+#### Replace Loops using Recursion
+```
+function multiply(arr, n) {
+    if (n <= 0) {
+      return 1;
+    } else {
+      return multiply(arr, n - 1) * arr[n - 1];
+    }
+  }
+```
+#### Profile Lookup
+```
+function lookUpProfile(name, prop) {
+  for (let x = 0; x < contacts.length; x++) {
+    if (contacts[x].firstName === name) {
+      if (contacts[x].hasOwnProperty(prop)) {
+        return contacts[x][prop];
+      } else {
+        return "No such property";
+      }
+    }
+  }
+  return "No such contact";
+}
+```
+#### Generate Random Fractions with JavaScript
+```
+function randomFraction() {
+  // Only change code below this line.
+  var result = 0;
+  // Math.random() can generate 0. We don't want to     return a 0,
+  // so keep generating random numbers until we get one     that isn't 0
+  while (result === 0) {
+    result = Math.random();
+  }
+
+  return result;
+  // Only change code above this line.
+}
+```
+#### Generate Random Whole Numbers with JavaScript
+```
+Math.floor(Math.random() * 20);
+```
+#### Generate Random Whole Numbers within a Range
+```
+Math.floor(Math.random() * (max - min + 1)) + min
+```
+#### Use the parseInt Function
+```
+const a = parseInt("007");
+```
+#### Use the parseInt Function with a Radix
+```
+// syntax : parseInt(string, radix);
+const a = parseInt("11", 2);
+```
+#### Use the Conditional (Ternary) Operator
+```
+function findGreater(a, b) {
+  return a > b ? "a is greater" : "b is greater or equal";
+}
+```
+#### Use Multiple Conditional (Ternary) Operators
+```
+function findGreaterOrEqual(a, b) {
+  return (a === b) ? "a and b are equal" : (a > b) ? "a is greater" : "b is greater";
+}
+```
+#### Use Recursion to Create a Countdown
+```
+function countdown(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const arr = countdown(n - 1);
+    arr.unshift(n);
+    return arr;
+  }
+}
+```
+#### Use Recursion to Create a Range of Numbers
+```
+function rangeOfNumbers(startNum, endNum) {
+  if (endNum < startNum) {
+    return [];
+  } else {
+    const numbers = rangeOfNumbers(startNum, endNum - 1);
+    numbers.push(endNum);
+    return numbers;
+  }
+}
+```
