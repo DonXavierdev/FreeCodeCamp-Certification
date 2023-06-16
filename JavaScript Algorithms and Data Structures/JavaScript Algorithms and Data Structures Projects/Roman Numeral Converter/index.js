@@ -1,17 +1,19 @@
-function convertToRoman(num){
-    if (typeof num !== 'number') 
-    return false; 
-    
-    var digits = String(+num).split(""),
-    key = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM",
-    "","X","XX","XXX","XL","L","LX","LXX","LXXX","XC",
-    "","I","II","III","IV","V","VI","VII","VIII","IX"],
-    roman_num = "",
-    i = 3;
-    while (i--)
-    roman_num = (key[+digits.pop() + (i * 10)] || "") + roman_num;
-    return Array(+digits.join("") + 1).join("M") + roman_num;
+function convertToRoman(decimal) {
+  const decimalValues = [
+    1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1
+  ];
+  const romanNumerals = [
+    "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"
+  ];
+
+  let roman = '';
+  for (let i = 0; i < decimalValues.length; i++) {
+    while (decimal >= decimalValues[i]) {
+      roman += romanNumerals[i];
+      decimal -= decimalValues[i];
     }
-    
-    console.log(convertToRoman(42))
-    
+  }
+
+  return roman;
+}
+console.log(convertToRoman(36));
